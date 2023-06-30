@@ -22,6 +22,9 @@ router.post('/', authenticate, async (req, res) => {
             pickupTime,
             pickupLocation,
             user: req.user,
+            donationCenter: req.donationCenter,
+            mealSize,
+            mealType,
         });
         await donation.save();
         res.status(200).json('Donation created successfully');
