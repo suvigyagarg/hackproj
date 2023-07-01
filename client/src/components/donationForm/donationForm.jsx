@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Context } from '../../context/Context';
+import './donationForm.css';
 
 
 const DonationForm = () => {
@@ -26,7 +27,6 @@ const token = user?.token;
 
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
 
     const formData = {
       foodItemType,
@@ -56,8 +56,12 @@ const token = user?.token;
   };
 
   return (
+    <>
+    <h1>Donation Form</h1>
+    <div className="donationForm">
     <form onSubmit={handleSubmit}>
       <div>
+      Food Type:
         <label>
           <input
             type="radio"
@@ -160,8 +164,10 @@ const token = user?.token;
         </label>
       </div>
 
-      <button type="submit">Submit</button>
+      <button type="submit" className='donateButton'>Donate</button>
     </form>
+    </div>
+    </>
   );
 };
 
