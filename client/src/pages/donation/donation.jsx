@@ -27,7 +27,7 @@ useEffect(() => {
     <>
 
     <DonationForm/>
-    <h1>Your Donations</h1>
+    <h1>Donations</h1>
     {donations.map((donation) => (
       <div key={donation._id}>
         <h3>{donation.foodItemType}</h3>
