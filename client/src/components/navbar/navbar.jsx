@@ -1,33 +1,26 @@
 import './navbar.css'
-import {Link} from 'react-router-dom'
-import {Context} from "../../context/Context"
-import {useContext} from "react"
+import { Link } from 'react-router-dom'
+import { Context } from "../../context/Context"
+import { useContext } from "react"
+import logo from './images/logo.png'
 
 export default function Navbar() {
-    const {user,dispatch} = useContext(Context)
+  const { user, dispatch } = useContext(Context)
 
   const handleLogout = () => {
-    dispatch({type:"LOGOUT"});
+    dispatch({ type: "LOGOUT" });
   };
 
   return (
     <div className="top">
       <div className="topLeft">
-        
+        <img className="logo" src={logo} alt="" />
+        <span className="MealMatters">Meal Matters</span>
+
       </div>
       <div className="topCenter">
         <ul className="topList">
-          <li className="topListItem">
-            <Link className="link" to="/">HOME</Link>
-          </li>
-          <li className="topListItem">
-          <Link className="link" to="/about">ABOUT</Link>
-          </li>
-          <li className="topListItem">
-          <Link className="link" to="/donation">DONATE</Link>
-          </li>
-          
-          <li className="topListItem" onClick={handleLogout}> 
+          <li className="topListItem" onClick={handleLogout}>
             {user && "LOGOUT"}
           </li>
 
@@ -35,15 +28,21 @@ export default function Navbar() {
       </div>
       <div className="topRight">
         <ul className='topList'>
-        <li className='topListItem'>
+          <li className="topListItem">
+            <Link className="link" to="/">Home</Link>
+          </li>
+          <li className="topListItem">
+            <Link className="link" to="/about">About Us</Link>
+          </li>
+          <li className='topListItem'>
 
-          <Link className='link' to='/login'> LOGIN </Link>
-        </li>
-        <li className='topListItem'>
+            <Link className='link' to='/login'> Login </Link>
+          </li>
+          <li className='topListItem'>
 
-          <Link className='link' to='/register'> REGISTER </Link>
-        </li>
-          </ul>
+            <Link className='link' to='/register'> Register </Link>
+          </li>
+        </ul>
       </div>
 
     </div>
