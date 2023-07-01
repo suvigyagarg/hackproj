@@ -22,9 +22,6 @@ export default function Navbar() {
       </div>
       <div className="topCenter">
         <ul className="topList">
-          <li className="topListItem" onClick={handleLogout}>
-            {user && "Logout"}
-          </li>
 
         </ul>
       </div>
@@ -37,12 +34,17 @@ export default function Navbar() {
           <li className="topListItem">
             <Link className="link" to="/about">About Us</Link>
           </li>
+
           <li className='topListItem'>
 
-            <Link className='link' to='/register'> Join Us </Link>
-          </li>
+          {user ? (<li className="topListItem link" onClick={handleLogout}>
+            {user && "Logout"}
+          </li>):
+          (<>
+           <Link className='link' to='/register'> Join Us </Link>
+          </>)}
         </ul>
-    
+
       </div>
 
     </div>

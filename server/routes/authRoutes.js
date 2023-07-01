@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 router.post('/register', async (req, res) => {
     const {username, email, password} = req.body;
     try {
-        let user = await User.findOne({email});
+        let user = await User.findOne({username});
         if (user) {
             return res.status(400).json('User already exists');
         }
@@ -46,9 +46,7 @@ router.post('/login', async (req, res) => {
             return res.status(400).json('Invalid password');
         }
 
-        const token = jwt.sign({_id: user._id}, process.env.JWT_SECRET,{
-            expiresIn: '1h'
-        });
+        const token = jwt.sign({_id: user._id}, process.env.JWT_SECRET);
         res.status(200).json({token});
 
     } catch (err) {

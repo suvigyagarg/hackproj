@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Context } from '../../context/Context';
+import './donationForm.css';
 
 
 const DonationForm = () => {
@@ -10,6 +11,8 @@ const DonationForm = () => {
   const [pickupTime, setPickupTime] = useState('');
   const [pickupLocation, setPickupLocation] = useState('');
   const [mealSize, setMealSize] = useState('children');
+  const [pickupAddress, setPickupAddress] = useState('');
+  const [username, setUsername] = useState('');
 
 const { user } = useContext(Context);
 const token = user?.token;
@@ -24,7 +27,6 @@ const token = user?.token;
 
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
 
     const formData = {
       foodItemType,
@@ -33,16 +35,19 @@ const token = user?.token;
       pickupTime,
       pickupLocation,
       mealSize,
+      username,
+      pickupAddress,
     };
 
     try {
-      const response = await axios.post('/api/donation', formData, {
+      const response = await axios.post('/donation', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           },
           }
           );
       console.log(response.data);
+      
       // Reset the form or perform any additional actions
     } catch (error) {
       console.error(error);
@@ -51,8 +56,12 @@ const token = user?.token;
   };
 
   return (
+    <>
+    <h1>Donation Form</h1>
+    <div className="donationForm">
     <form onSubmit={handleSubmit}>
       <div>
+      Food Type:
         <label>
           <input
             type="radio"
@@ -88,7 +97,7 @@ const token = user?.token;
         <label>
           Pickup Date:
           <input
-            type="date"
+            type="text"
             value={pickupDate}
             onChange={(e) => setPickupDate(e.target.value)}
           />
@@ -135,8 +144,30 @@ const token = user?.token;
           />Adults
         </label>
       </div>
-      <button type="submit">Submit</button>
+      <div>
+        <label>
+          Pickup Address:
+          <textarea
+            value={pickupAddress}
+            onChange={(e) => setPickupAddress(e.target.value)}
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Username:
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </label>
+      </div>
+
+      <button type="submit" className='donateButton'>Donate</button>
     </form>
+    </div>
+    </>
   );
 };
 

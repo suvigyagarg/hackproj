@@ -1,0 +1,44 @@
+.donationPage{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #FAFDD6;
+    margin: 0;
+}
+
+
+.ruler{
+    color: gray;
+    margin: 0;
+}
+
+.donations{
+    padding-top: 50px;
+    background-color: #FAFDD6;
+    width: 100%;
+    margin: 0;
+    font-size: 50px;
+}
+
+.donationBottom{
+    background-color: #FAFDD6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.donation{
+    
+    background-color: #E6BA95;
+    padding: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+    margin: 50px;
+    width: 20%;
+}
