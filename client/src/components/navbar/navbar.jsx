@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Context } from "../../context/Context"
 import { useContext } from "react"
 import logo from './images/logo.png'
-
 export default function Navbar() {
   const { user, dispatch } = useContext(Context)
 
@@ -18,13 +17,13 @@ export default function Navbar() {
       <div className="topLeft">
 
         <img className="logo" src={logo} alt="" />
-        <span className="MealMatters">Meal Matters</span>
+       <Link className="link MealMatters" to="/">Meal Matters</Link>
 
       </div>
       <div className="topCenter">
         <ul className="topList">
           <li className="topListItem" onClick={handleLogout}>
-            {user && "LOGOUT"}
+            {user && "Logout"}
           </li>
 
         </ul>
@@ -40,18 +39,9 @@ export default function Navbar() {
           </li>
           <li className='topListItem'>
 
-            <Link className='link' to='/login'> Login </Link>
-          </li>
-          <li className='topListItem'>
-
-            <Link className='link' to='/register'> Register </Link>
+            <Link className='link' to='/register'> Join Us </Link>
           </li>
         </ul>
-
-
-
-      
-      
     
       </div>
 

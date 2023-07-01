@@ -27,7 +27,7 @@
 
 .headerImg{
     width: 100%;
-    height: 95%;
+    height: 100%;
     object-fit: cover;
 }
 .overlay {
@@ -42,7 +42,7 @@
     align-items: flex-start;
     background-color: rgba(0, 0, 0, 0.5);
  
-    height: 97%;
+
   }
 
   .content{

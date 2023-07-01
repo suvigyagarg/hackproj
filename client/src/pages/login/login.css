@@ -1,10 +1,20 @@
+.bg{
+    background-color:#FAFDD6 ;
+    margin: 0;
+}
+.loginImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
 .login{
     display: flex;
     flex-direction: row;
     height: calc(100vh - 60px);
-    width: 100%;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 .loginImg{
     flex:3;
@@ -17,27 +27,48 @@
     height: 100%;
     object-fit: cover;
 }
+.overlay {
+    position: absolute;
+    height: 101.5%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.5);
+
+  }
 
 .loginWrapper{
-    margin: 0;padding: 0;
-    flex:4;
-    height: 100%;
-    width: 100%;
+    
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     justify-content: center;
-    background:rgb(177, 194, 177);
     background-size: cover;
     background-position: center;
 }
 
 .loginTitle{
+  position: absolute;
+  top: 20%;
+  left: 45%;
     font-size: 80px;
+    font-weight: bolder;
+    color: #A2B38B;
+    text-shadow: 2px 2px 2px black;
 }
 
 .loginForm{   
-    width: 30%;
+    position:absolute;
+    top: 32%;
+    left: 40%;
+    width: 20%;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -46,39 +77,47 @@
 
 .loginForm > label{
     margin: 10px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #A2B38B;
+    text-shadow: black 1px 1px 1px;
 }
 
 .loginInput{
     padding: 10px;
-    background-color: white;
-    border: none;
+    background-color: #E4E9BE;
+    border: black 1px solid;
+    border-radius: 5px;
+    
 }
 
 .loginButton{
     width: 50%;
     align-self: center;
-    margin-top: 20px;
+    margin-top: 40px;
     cursor: pointer;
-    background-color: lightcoral;
+    background-color: #A2B38B ;
     border: none;
-    color: white;
     border-radius: 10px;
-    padding: 10px;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .loginButton:disabled{
-    background-color: rgb(242, 195, 195);
     cursor: not-allowed;
 }
 
 .loginRegisterButton{
-    position: absolute; 
-    top: 80px;
-    right: 20px;
-    background-color: teal;
+    width: 50%;
+    align-self: center;
     cursor: pointer;
+    background-color:#A2B38B ;
     border: none;
-    padding: 10px;
-    color: white;
-    border-radius: 10px;
+ padding: 10px;
+ border-radius: 10px;   
+ margin-top: 0px;
+ color: white;
+ text-decoration: none;
 }
+
+

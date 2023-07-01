@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './register.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import image from './images/image.jpg'
 
 export default function Register() {
   const [username, setUsername] = useState
@@ -29,12 +30,12 @@ export default function Register() {
     
 
   return (
-    <div className='register'>
-        <div className="registerImg">
-          <img src="https://images.pexels.com/photos/6646858/pexels-photo-6646858.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
-        </div>
-        <div className="registerWrapper">
-        <span className="registerTitle">Register</span>
+    <div className='login'>
+
+      <img className='loginImg' src={image} alt='' />
+      <div className="headerContent">
+        <div className="overlay">
+        <span className="signupTitle">Join Us</span>
         <form action="" className="registerForm" onSubmit={handleSubmit}>
             <label>Username</label>
             <input type="text" className="registerInput" placeholder="Enter your username..."
@@ -48,14 +49,16 @@ export default function Register() {
             <input type="password" className="registerInput" placeholder="Enter your password..."
             onChange={e => setPassword(e.target.value)}
             />
-            <button className="registerButton" type='submit'>Register</button>
+            <button className="registerButton btn btn-dark btn-lg" type='submit'>Be the Change</button>
             <button className="registerLoginButton">
-              <Link className='link' to='/login'>Login</Link>
+              <Link className='link' to='/login'>Already a User</Link>
             </button>
             {error && <span>Something went wrong!</span>}
         </form>
         </div>
+      </div>
     </div>
+    
   )
 }
 

@@ -28,17 +28,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background:rgb(177, 194, 177);
     background-size: cover;
     background-position: center;
 }
 
-.registerTitle{
+.signupTitle{
+    
+    position: absolute;
+  top: 20%;
+  left: 45%;
     font-size: 80px;
+    font-weight: bolder;
+    color: #A2B38B;
+    text-shadow: 2px 2px 2px black;
 }
 
 .registerForm{
-    width: 25%;
+    position:absolute;
+    top: 32%;
+    left: 42%;
+    width: 20%;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -47,34 +56,44 @@
 
 .registerForm > label{
     margin: 10px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #A2B38B;
+    text-shadow: 2px 2px 2px black
 }
 
 .registerInput{
     padding: 10px;
-    background-color: white;
-    border: none;
+    background-color: #E4E9BE;
+    border: black solid 2px;
+    border-radius: 5px;
+    color:#A2B38B ;
+    font-size: 15px;
+    
 }
 
 .registerButton{
-    width: 50%;
+    width: 60%;
     align-self: center;
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-right: 50px;
     cursor: pointer;
-    background-color: teal;
-    border: none;
+    background-color:#A2B38B;
+    border: black solid 1px;
     color: white;
-    border-radius: 10px;
-    padding: 10px;
+    font-size: 25px;
+     font-weight: 500;
 }
 
 .registerLoginButton{
     position: absolute;
-    top: 80px;
-    right: 20px;
-    background-color: lightcoral;
+    top: 430px;
+    right: 145px;
+    background-color: #A2B38B;
     cursor: pointer;
     border: none;
-    padding: 10px;
-    color: white;
+    padding: 5px;
+    color: #E4E9BE;
     border-radius: 10px;
+    border: black solid 1px;
 }

@@ -1,0 +1,22 @@
+.bg{
+  background-image: url('https://images.pexels.com/photos/6646904/pexels-photo-6646904.jpeg?auto=compress&cs=tinysrgb&w=600');
+  margin-bottom: 25px;
+  height: 200%
+}
+.mission{
+ background-color: #FAFDD6;
+  width: 100%;
+  padding : 30px;
+}
+.title{
+  font-size: 80px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #A2B38B;
+  text-shadow: black 1px 1px 1px;
+}
+.para{
+font-size: 27px;
+font-weight: 500;
+color: #A2B38B ;
+}
