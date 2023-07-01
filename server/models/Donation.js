@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const donationSchema = new mongoose.Schema({
     //Veg, Nonveg
-    foodItemtype:{
+    foodItemType:{
         type: String,
         required: true,
     },
@@ -11,7 +11,7 @@ const donationSchema = new mongoose.Schema({
         required: true,
     },
     pickupDate:{
-        type: Date,
+        type: String,
         required: true,
     },
     pickupTime:{
@@ -22,14 +22,9 @@ const donationSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    user:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true,
-    },
     //Small, Medium, Large,children, adult
     mealSize:{
-        type: Number,
+        type: String,
         required: true,
     },
 }, {timestamps: true});

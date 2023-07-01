@@ -36,13 +36,14 @@ const token = user?.token;
     };
 
     try {
-      const response = await axios.post('/api/donation', formData, {
+      const response = await axios.post('/donation', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           },
           }
           );
       console.log(response.data);
+      
       // Reset the form or perform any additional actions
     } catch (error) {
       console.error(error);
@@ -88,7 +89,7 @@ const token = user?.token;
         <label>
           Pickup Date:
           <input
-            type="date"
+            type="text"
             value={pickupDate}
             onChange={(e) => setPickupDate(e.target.value)}
           />
