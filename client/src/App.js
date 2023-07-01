@@ -8,6 +8,7 @@ import Donation from './pages/donation/donation';
 import FindDonation from './pages/findDonation/findDonation';
 import About from './pages/about/about';
 import Navbar from './components/navbar/navbar';
+import Footer from './components/footer/footer';
 import {Context} from "./context/Context"
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/findDonation" element={<FindDonation />} />
           <Route path="/about" element={<About />} />
         </Routes>
+      <Footer/>
       </Router>      
   </div>
 );
