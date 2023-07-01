@@ -20,6 +20,15 @@
     justify-content: center;
 }
 
+.topLeft > img{
+    width: 40px;
+    height: 40px;
+}
+.webName{
+    margin: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
 
 .topList {
     display: flex;

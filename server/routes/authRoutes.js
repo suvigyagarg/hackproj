@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 
 
 router.post('/register', async (req, res) => {
-    const {name, email, password} = req.body;
+    const {username, email, password} = req.body;
     try {
         let user = await User.findOne({email});
         if (user) {
@@ -15,17 +15,18 @@ router.post('/register', async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        user = new User({
-            name,
+        const newUser = new User({
+            username,
             email,
-            password: hashedPassword
+            password: hashedPassword,
+
         });
 
-        await user.save();
+        await newUser.save();
 
-        const token = jwt.sign({ userId: savedUser._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET);
 
-    res.status(201).json({ message: 'User registered successfully', token });
+    res.status(201).json({ message: 'User registered successfully', newUser, token});
 
     } catch (err) {
         res.status(500).json(err);
@@ -33,9 +34,9 @@ router.post('/register', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-    const {email, password} = req.body;
+    const {username, password} = req.body;
     try {
-        let user = await User.findOne({email});
+        let user = await User.findOne({username});
         if (!user) {
             return res.status(400).json('User does not exist');
         }

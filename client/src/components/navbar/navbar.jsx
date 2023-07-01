@@ -11,9 +11,12 @@ export default function Navbar() {
     dispatch({ type: "LOGOUT" });
   };
 
+
+
   return (
     <div className="top">
       <div className="topLeft">
+
         <img className="logo" src={logo} alt="" />
         <span className="MealMatters">Meal Matters</span>
 
@@ -27,6 +30,7 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="topRight">
+
         <ul className='topList'>
           <li className="topListItem">
             <Link className="link" to="/">Home</Link>
@@ -43,6 +47,12 @@ export default function Navbar() {
             <Link className='link' to='/register'> Register </Link>
           </li>
         </ul>
+
+
+
+      
+      
+    
       </div>
 
     </div>
