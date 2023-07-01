@@ -27,6 +27,14 @@ const donationSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    username:{
+        type: String,
+        required: true,
+    },
+    pickupAddress:{
+        type: String,
+        required: true,
+    }
 }, {timestamps: true});
 
 const Donation = mongoose.model('Donation', donationSchema);

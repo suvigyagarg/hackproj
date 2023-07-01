@@ -10,6 +10,8 @@ const DonationForm = () => {
   const [pickupTime, setPickupTime] = useState('');
   const [pickupLocation, setPickupLocation] = useState('');
   const [mealSize, setMealSize] = useState('children');
+  const [pickupAddress, setPickupAddress] = useState('');
+  const [username, setUsername] = useState('');
 
 const { user } = useContext(Context);
 const token = user?.token;
@@ -33,6 +35,8 @@ const token = user?.token;
       pickupTime,
       pickupLocation,
       mealSize,
+      username,
+      pickupAddress,
     };
 
     try {
@@ -136,6 +140,26 @@ const token = user?.token;
           />Adults
         </label>
       </div>
+      <div>
+        <label>
+          Pickup Address:
+          <textarea
+            value={pickupAddress}
+            onChange={(e) => setPickupAddress(e.target.value)}
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Username:
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </label>
+      </div>
+
       <button type="submit">Submit</button>
     </form>
   );

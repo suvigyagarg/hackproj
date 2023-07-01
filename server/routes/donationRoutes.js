@@ -13,7 +13,7 @@ router.get('/', authenticate, async (req, res) => {
 );
 
 router.post('/', authenticate, async (req, res) => {
-    const {foodItemType, quantity, pickupDate, pickupTime, pickupLocation,mealSize} = req.body;
+    const {foodItemType, quantity, pickupDate, pickupTime, pickupLocation,mealSize, username, pickupAddress} = req.body;
     try {
         const donation = new Donation({
             foodItemType,
@@ -22,6 +22,8 @@ router.post('/', authenticate, async (req, res) => {
             pickupTime,
             pickupLocation,
             mealSize,
+            username,
+            pickupAddress,
         });
         await donation.save();
         res.status(200).json('Donation created successfully');
