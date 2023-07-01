@@ -10,7 +10,7 @@
     align-items: center;
     font-family: "Lora", serif;
     color: #FAFDD6;  
-    margin-left: 540px; 
+    margin-left: 28%; 
 }
 
 .headerTitleSm{
@@ -47,9 +47,9 @@
 
   .content{
     position: absolute;
-    top: 330px;
-    left: 230px;
-    right: 1000px;
+    top: 38%;
+    left: 12%;
+    right: 50%;
     color: #FAFDD6 ;
    
   }
