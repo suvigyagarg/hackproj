@@ -10,10 +10,13 @@ export default function Navbar() {
     dispatch({type:"LOGOUT"});
   };
 
+
+
   return (
     <div className="top">
       <div className="topLeft">
-        
+        <img src="https://media.discordapp.net/attachments/755069019870068878/1124383829587669033/Meal_Matters-1_1.png?width=606&height=606" alt="" />
+        <div className="webName">MealMatters</div>
       </div>
       <div className="topCenter">
         <ul className="topList">
@@ -34,9 +37,14 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="topRight">
-        <ul className='topList'>
-        <li className='topListItem'>
 
+
+      
+      
+        
+{user ?  <span className="username">Welcome</span> : (
+  <ul className='topList'>
+  <li className='topListItem'>
           <Link className='link' to='/login'> LOGIN </Link>
         </li>
         <li className='topListItem'>
@@ -44,6 +52,7 @@ export default function Navbar() {
           <Link className='link' to='/register'> REGISTER </Link>
         </li>
           </ul>
+) }
       </div>
 
     </div>

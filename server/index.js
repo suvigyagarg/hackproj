@@ -18,8 +18,8 @@ mongoose.connect(process.env.MONGO_URL, {
 }).then(console.log(`MongoDB Connected`)).catch(err => console.log(err))
 
 app.use(`/api/auth`, authRoutes)
-app.use(`/api/donations`, donationRoutes)
-app.use(`/api/donationCenters`, donationCenterRoutes)
+app.use(`/api/donation`, donationRoutes)
+app.use(`/api/donationCenter`, donationCenterRoutes)
 
 app.listen(5000, () => console.log(`Server is running on port 5000`))
 

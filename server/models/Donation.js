@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const donationSchema = new mongoose.Schema({
     //Veg, Nonveg
     foodItemtype:{
-        type: Boolean,
+        type: String,
         required: true,
     },
     quantity:{
@@ -27,19 +27,9 @@ const donationSchema = new mongoose.Schema({
         ref: 'User',
         required: true,
     },
-    donationCenter:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'DonationCenter',
-        required: true,
-    },
     //Small, Medium, Large,children, adult
     mealSize:{
         type: Number,
-        required: true,
-    },
-    //Breakfast, Lunch, Dinner
-    mealType:{
-        type: String,
         required: true,
     },
 }, {timestamps: true});
